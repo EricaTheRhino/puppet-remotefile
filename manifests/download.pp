@@ -62,5 +62,6 @@ define remotefile::download(
     user    => $user,
     group   => $group,
     unless  => "/usr/bin/shasum -a 256 ${file_path} | /bin/grep ${checksum}",
+    require => [Package['wget'], Package[$remotefile::params::shasum_pkg]]
   }
 }

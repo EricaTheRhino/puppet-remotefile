@@ -24,6 +24,6 @@
 #
 class remotefile inherits remotefile::params {
 
-  ensure_packages([$remotefile::params::shasum_pkg, 'wget'])
+  ensure_packages([$remotefile::params::checksums_pkg, 'wget'])
 
 }

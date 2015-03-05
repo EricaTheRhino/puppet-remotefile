@@ -17,6 +17,7 @@
 # === Authors
 #
 # Andrew Leonard
+# David R Newman
 #
 # === Copyright
 #
@@ -25,8 +26,8 @@
 class remotefile::params {
 
   case $::operatingsystem {
-    ubuntu: {
-      $shasum_pkg = 'perl'
+    debian, ubuntu: {
+      $checksums_pkg = 'coreutils'
     }
     default: {
       fail("${operatingsystem} not supported.")
